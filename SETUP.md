@@ -50,8 +50,22 @@ text/markdown`, same two headers).
 - Fill placeholders: `<node>.<tailnet>.ts.net` and `<SHARE_SECRET>` in `Config/SharePage` and
   `Config/SystemStatus`; the two kb-audio links in `index` (remove them if `audio/` is not installed).
 - `AI 守則/SilverBullet 維護手冊` must keep this exact path; the bridge's `readme()` reads it.
+- If `audio/` is not installed, delete item 4 of the write steps in that manual page (the one that sends large
+  originals to `api/source`) and the two mentions of kb-audio in its last section; that route does not exist
+  without the container.
 - Verify: list `/.fs` and compare sizes with the local files.
-- HUMAN: run `System: Reload` in SilverBullet (Ctrl+/), confirm the share button and theme appear.
+
+Page tree (the sidebar button in `Config/SharePage` calls it; `CONFIG` holds its settings):
+
+1. On the PC: `pip install requests`, then run `python bridge/patch_treeview.py` with `SB_URL` and `SB_TOKEN`
+   set in the environment. It downloads the treeview plug, bakes in fixed sidebar colours, and uploads it to
+   `_plug/treeview.plug.js`. It prints `OK … verified`.
+2. HUMAN: in SilverBullet run `Plugs: Reload`, then `System: Reload` (Ctrl+/). Confirm the share button, the
+   clock (history) button, the sidebar button and the theme appear, and that the sidebar button opens the tree.
+
+`Config/MobileTapShield` (phone only) stops accidental taps from opening the keyboard: double-tap or long-press
+to edit. Its code comes from a SilverBullet community forum thread, credited at the top of the page. HUMAN: on
+the phone, confirm a single tap no longer opens the keyboard.
 
 ## 3. MCP bridge
 
@@ -103,10 +117,15 @@ text/markdown`, same two headers).
    hook next to whatever is already there. Fill the placeholders; the hook's script path is the absolute path of
    `claude/kb_session_start.py` in this clone. Do not replace the existing file.
 4. Append the numbered rules in `claude/CLAUDE.md` to `~/.claude/CLAUDE.md`.
-5. Register the bridge as an MCP server for Claude Code:
-   `claude mcp add --transport http silverbullet http://<NAS-IP>:8008/<MCP_PATH_SECRET>/mcp`
+5. Register the bridge as an MCP server for Claude Code, for every project:
+   `claude mcp add --scope user --transport http silverbullet http://<NAS-IP>:8008/<MCP_PATH_SECRET>/mcp`
    (or rely on the claude.ai connector from step 4).
-6. Verify: `echo '{}' | python claude/kb_session_start.py` (with the env set) prints JSON whose
+6. Off-site backup tool (`sb_backup.py`): write the NAS SSH login from step 0 to a file outside any repository,
+   for example `~/.claude/nas-credentials.json`, as
+   `{"host": "<NAS-IP>", "port": 22, "user": "<login>", "password": "<password>"}`, and put its absolute path
+   in the `NAS_CREDENTIALS` entry of the `env` block. Verify: `python ~/.claude/skills/silverbullet/sb_backup.py`
+   (with the env set) writes `~/silverbullet_backups/silverbullet-<date>.tar.gz`.
+7. Verify: `echo '{}' | python claude/kb_session_start.py` (with the env set) prints JSON whose
    `additionalContext` holds the `kb_index` text. HUMAN: open a new session and confirm the index is in context.
 
 ## 8. Knowledge base acceptance
