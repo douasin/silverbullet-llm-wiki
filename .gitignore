@@ -1,0 +1,7 @@
+.env
+.gitlab-token
+*-credentials
+certs/
+history/
+jobs/
+__pycache__/

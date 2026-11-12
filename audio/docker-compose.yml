@@ -1,0 +1,13 @@
+services:
+  kb-audio:
+    build: .
+    container_name: kb-audio
+    restart: unless-stopped
+    ports:
+      - "8009:8009"
+    env_file:
+      - .env
+    volumes:
+      - ./server.py:/app/server.py:ro
+      - ./jobs:/jobs
+      - /volume1/kb-media:/media

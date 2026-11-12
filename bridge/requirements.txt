@@ -1,0 +1,4 @@
+fastmcp>=3,<4
+httpx>=0.27
+uvicorn>=0.30
+markdown>=3.6

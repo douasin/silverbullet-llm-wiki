@@ -1,0 +1,22 @@
+{
+  "env": {
+    "SILVERBULLET_MCP_URL": "http://<NAS-IP>:8008/<MCP_PATH_SECRET>/mcp",
+    "SB_URL": "http://<NAS-IP>:3001",
+    "SB_TOKEN": "<SB_AUTH_TOKEN>"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["<absolute path to>/claude/kb_session_start.py"],
+            "timeout": 30,
+            "statusMessage": "載入 kb 根 index"
+          }
+        ]
+      }
+    ]
+  }
+}
