@@ -63,9 +63,9 @@ Page tree (the sidebar button in `Config/SharePage` calls it; `CONFIG` holds its
 2. HUMAN: in SilverBullet run `Plugs: Reload`, then `System: Reload` (Ctrl+/). Confirm the share button, the
    clock (history) button, the sidebar button and the theme appear, and that the sidebar button opens the tree.
 
-Optional, phone only: a page that stops accidental taps from opening the keyboard. Its code is a community
-snippet and is not shipped here. Search the SilverBullet community forum for "Streamlined Shield" (accidental
-taps), and save the `space-lua` block as page `Config/MobileTapShield`.
+`Config/MobileTapShield` (phone only) stops accidental taps from opening the keyboard: double-tap or long-press
+to edit. Its code comes from a SilverBullet community forum thread, credited at the top of the page. HUMAN: on
+the phone, confirm a single tap no longer opens the keyboard.
 
 ## 3. MCP bridge
 

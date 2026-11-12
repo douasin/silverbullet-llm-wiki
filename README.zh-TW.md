@@ -66,4 +66,6 @@ Karpathy 式 [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c1
 
 ## 授權
 
-[MIT](LICENSE)
+[MIT](LICENSE)。有一頁是第三方內容:`space/Config/MobileTapShield.md` 裡的程式碼來自
+[SilverBullet 社群論壇的討論串](https://community.silverbullet.md/t/fixing-workaround-the-silverbullet-codemirror-mobile-keyboard-drama-disable-accidental-taps/3709),
+屬於原作者。

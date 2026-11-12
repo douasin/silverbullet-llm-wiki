@@ -71,4 +71,6 @@ language; translate `space/AI 守則/SilverBullet 維護手冊.md` if you want t
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). One page is third-party: the code in `space/Config/MobileTapShield.md` comes from a
+[SilverBullet community forum thread](https://community.silverbullet.md/t/fixing-workaround-the-silverbullet-codemirror-mobile-keyboard-drama-disable-accidental-taps/3709)
+and belongs to its author.
