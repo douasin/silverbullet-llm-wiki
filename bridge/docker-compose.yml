@@ -1,0 +1,13 @@
+services:
+  silverbullet-mcp:
+    build: .
+    container_name: silverbullet-mcp
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+    env_file:
+      - .env
+    volumes:
+      - ./certs:/certs:ro
+      - /volume1/docker/silverbullet/space:/space:ro
+      - ./history:/history

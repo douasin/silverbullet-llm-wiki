@@ -1,0 +1,12 @@
+services:
+  silverbullet:
+    image: ghcr.io/silverbulletmd/silverbullet:latest
+    restart: unless-stopped
+    environment:
+      - SB_REMEMBER_ME_HOURS=2160
+      - SB_AUTH_TOKEN=<API token：python -c "import secrets;print(secrets.token_urlsafe(32))">
+      - SB_USER=<帳號>:<密碼>
+    volumes:
+      - /volume1/docker/silverbullet/space:/space
+    ports:
+      - 3001:3000
