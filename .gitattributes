@@ -1,0 +1,2 @@
+# every text file is LF on every platform: shell scripts and pages break with CRLF
+* text=auto eol=lf
