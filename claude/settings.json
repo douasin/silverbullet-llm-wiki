@@ -2,7 +2,8 @@
   "env": {
     "SILVERBULLET_MCP_URL": "http://<NAS-IP>:8008/<MCP_PATH_SECRET>/mcp",
     "SB_URL": "http://<NAS-IP>:3001",
-    "SB_TOKEN": "<SB_AUTH_TOKEN>"
+    "SB_TOKEN": "<SB_AUTH_TOKEN>",
+    "NAS_CREDENTIALS": "<absolute path to>/nas-credentials.json"
   },
   "hooks": {
     "SessionStart": [

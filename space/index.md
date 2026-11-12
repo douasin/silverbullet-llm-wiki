@@ -52,3 +52,4 @@ ${query[[
 - [[Config/SharePage|分享與歷史]] — 頂欄分享按鈕、頁面歷史面板
 - [[Config/Theme|主題配色]]
 - [[Config/CopyPageButton|複製整頁按鈕]]
+- [[CONFIG|plug 設定]] — 側欄頁面樹(treeview)的設定
